@@ -15,7 +15,6 @@
           {{$parent.locale["column count"]}}
           <input type="number" style="width: 60px" maxlength="2" min="2" max="10" v-model="cols">
         </label>
-
         <span>  </span>
         <button type="submit">{{$parent.locale.save}}</button>
       </form>
