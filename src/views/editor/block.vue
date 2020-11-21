@@ -1,26 +1,50 @@
 <template>
-  <div class="vue-html5-editor" :class="{'full-screen':fullScreen}" :style="{'z-index':zIndex}">
-
-    <div class="toolbar" :style="{'z-index':zIndex+1}" ref="toolbar">
-      <ul>
-        <template v-for="module in modules">
-          <li :title="locale[module.i18n]" @click="activeModule(module)">
-            <span class="icon" :class="module.icon"></span>
-            &nbsp;{{locale[module.i18n]}}
-            <template v-if="showModuleName === undefined ? defaultShowModuleName : showModuleName">
-              &nbsp;{{locale[module.i18n]}}
-            </template>
-          </li>
-        </template>
-      </ul>
-
-      <div class="dashboard" v-show="dashboard" ref="dashboard">
-
-        <keep-alive>
-          <div v-show="dashboard" :is="dashboard"></div>
-        </keep-alive>
-      </div>
+  <div class="doc-block-editor" :class="{'full-screen':fullScreen}" :style="{'z-index':zIndex}">
+  <div class="block_header">
+    <div class="doc_name">
+          <div class="title">AAAAABBBB</div>
     </div>
+    <div style="flex: 1;"></div>
+    <div class="doc_status">
+      <span>
+      <i class="el-icon-check"></i>
+       </span>
+    </div>
+    <div class="doc_toolbar">
+            <div  class="buttons">
+              <el-button size="small"  type="info" ><i class="el-icon-view"></i>  保 存</el-button>
+
+              <el-button-group>
+                <el-button size="small" circle icon="el-icon-edit"></el-button>
+                <el-button size="small" circle icon="el-icon-share"></el-button>
+                <el-popover  placement="bottom-end" trigger="click" ref="popover">
+                <el-button size="small" slot="reference"  class="el-dropdown-link" @click="openToolbarMore = !openToolbarMore" ref="be_moreToolbar"
+                           circle icon="el-icon-more"></el-button>
+
+                  <div class="popcontent">
+                    <a href="#" class="itemmenu"><i class="el-icon-link"></i> 公文历史</a>
+                    <a href="#" class="itemmenu"><i class="el-icon-remove"></i> 删除历史</a>
+                    <el-divider></el-divider>
+
+                     <div class="notetext">
+                       <div>所属文件夹:</div>
+                       <div>所属文件夹:</div>
+                       <div>sdf</div>
+                       <div>AAA</div>
+                     </div>
+
+                  </div>
+                </el-popover>
+
+              </el-button-group>
+            </div>
+
+    </div>
+  </div>
+
+
+<block> sdf df dAAA </block>
+
 
     <div class="content" ref="content" id="gov_editor_content_main" :style="contentStyle"
          contenteditable @click="toggleDashboard(dashboard)">
@@ -44,12 +68,15 @@
 </template>
 
 <script>
-  import './editor.css'
+  import './block.less'
   import RangeHandler from '@/range/handler'
   import {getChildrenJSON} from '@/range/util'
+  import 'muse-ui/dist/muse-ui.css'
+  import block from './block_core'
 
   export default {
     name: "editor",
+    components:{block},
     props: {
       content: {
         type: String,
@@ -75,6 +102,7 @@
     },
     data() {
       return {
+        openToolbarMore:false,
         // defaultShowModuleName:false
         // locale: {},
         // modules:{},

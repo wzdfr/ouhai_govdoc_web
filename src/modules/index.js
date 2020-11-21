@@ -1,4 +1,4 @@
-// import align from './align/index'
+import align from './align/index'
 // import color from './color/index'
 // import eraser from './eraser/index'
 // import font from './font/index'
@@ -15,12 +15,11 @@ import tablenew from './tablenew/index'
 // import undo from './undo/index'
 // import unlink from './unlink/index'
 
-
 export default [
     // text,
     // color,
     // font,
-    // align,
+    align,
     // list,
     // link,
     // unlink,

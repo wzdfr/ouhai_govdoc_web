@@ -1,5 +1,5 @@
 <template>
-  <div style="display: block;position: relative;flex: 1">
+  <div style="display: block;position: relative;flex: 1;background: #FFF;">
     <!--  <el-container style="width: 100%;">-->
     <el-row :gutter="10" style="margin-left: 0px;margin-right: 0px;">
       <el-col :span="24" style="padding: 5px;border-bottom: 1px solid #dcdcdc;box-shadow: 1px 0px 10px #e9e9e9;">

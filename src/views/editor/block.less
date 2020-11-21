@@ -1,0 +1,82 @@
+
+.doc-block-editor {
+  clear: both;
+  height: 100%;
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  flex-direction: column;
+  background-color: #ffffff;
+
+  .block_header {
+    display: flex;
+    position: relative;
+    align-items: center;
+
+    min-height: unset;
+    padding: 20px;
+
+    .doc_name {
+      border: 0;
+      margin: 0;
+      display: inline-flex;
+      padding: 0;
+      position: relative;
+      min-width: 0;
+      flex-direction: column;
+      vertical-align: top;
+
+      .title {
+        color: rgba(0, 0, 0, 0.87);
+        cursor: text;
+        display: inline-flex;
+        position: relative;
+        font-size: 1rem;
+        box-sizing: border-box;
+        align-items: center;
+        font-family: "Open Sans", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Microsoft Yahei", Arial, sans-serif;
+        line-height: 1.1875em;
+      }
+    }
+
+    .doc_status {
+      width: 24px;
+      height: 24px;
+      display: flex;
+      position: relative;
+      text-align: right;
+      align-items: center;
+      flex-shrink: 0;
+      margin-right: 16px;
+      justify-content: center;
+    }
+
+    .doc_toolbar {
+      flex-shrink: 0;
+
+      .buttons {
+        i {
+          font-size: 15px;
+          font-weight: bold;
+        }
+
+        .el-button {
+          border: none !important;
+        }
+      }
+
+      //justify-content: flex-end;
+    }
+
+  }
+}
+
+.popcontent {
+  min-width: 200px;
+
+  .itemmenu {
+    display: block;
+    padding: 10px;
+  }
+  .itemmenu:hover{background: #e3e9e6;}
+}

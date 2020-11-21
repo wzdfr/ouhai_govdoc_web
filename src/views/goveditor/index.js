@@ -7,12 +7,8 @@ import mixin from '@/libs/mixin'
 
 polyfill()
 
-/**
- * Vue html5 Editor
- * @param Vue   {Vue}
- * @param options {Object}
- */
-class VueHtml5Editor {
+
+class GovEditor {
   /**
    * build an editor component
    */
@@ -111,8 +107,8 @@ class VueHtml5Editor {
    * @param options
    */
   static install(Vue, options = {}) {
-    Vue.component(options.name || 'vue-html5-editor', new VueHtml5Editor(options))
+    Vue.component(options.name || 'vue-html5-editor', new GovEditor(options))
   }
 }
 
-export default VueHtml5Editor
+export default GovEditor

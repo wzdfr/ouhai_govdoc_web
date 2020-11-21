@@ -1,6 +1,9 @@
 <template>
   <div class="hello">
-    <a href="#/doc/blocks3">公文积木</a>
+    <a href="#/dd/home">测试首页</a>
+    <a href="#/doc/blocks">编辑器1</a>
+    <a href="#/doc/blocks3">编辑器2</a>
+    <a href="#/doc/blocks4">编辑器2</a>
 
   </div>
 </template>

@@ -25,6 +25,8 @@
     <div class="content" ref="content" id="gov_editor_content_main" :style="contentStyle"
          contenteditable @click="toggleDashboard(dashboard)">
     </div>
+
+
     <div v-show="drawerstatus">
       <keep-alive>
       <div v-show="drawerstatus" :is="drawer" @visibled="updateDrawer" :drawer_visible="drawerstatus"></div>

@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
-import docMain from '@/views/docblocks/index'
+import docMain from '@/views/docblocks/index2'
+import dingtalkMain from '@/views/dingtalk/main'
 
 Vue.use(Router)
 
@@ -31,6 +32,25 @@ export default new Router({
       component:  resolve => {
         require(['@/views/docblocks/index4.vue'], resolve)
       }
+    },{
+      path: '/dd',
+      name: 'dingtalk',
+      component: dingtalkMain,
+      children: [
+        {
+          path: 'home',
+          name: 'home',
+          component: resolve => {
+            require(['@/views/dingtalk/home.vue'], resolve)
+          }
+        } ,{
+          path: 'document',
+          name: 'document',
+          component: resolve => {
+            require(['@/views/dingtalk/document.vue'], resolve)
+          }
+        }
+      ]
     },
     {
       path: '/doc/blocks',

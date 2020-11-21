@@ -1,6 +1,6 @@
 <template>
     <el-drawer
-      size="60%"
+      size="83%"
       :visible.sync="drawer_visible"
       @closed="doClose"
       :title="title"
@@ -28,7 +28,8 @@
 <script>
   export default {
     props: {
-      drawer_visible: Boolean
+      drawer_visible: Boolean,
+      drawer:null
     },
     data() {
       return {
@@ -44,9 +45,11 @@
     watch: {
       visible(val) {
         this.drawer_visible = val
+        console.log(this.drawer_visible)
       }
     },
     created() {
+      console.log(this.drawer_visible)
     },
     methods: {
       doClose() {

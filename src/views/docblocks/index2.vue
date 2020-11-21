@@ -4,7 +4,7 @@
 
       <el-row>
         <el-col :span="24">
-          INDEX
+<!--          INDEX-->
 
           {{ msg }}
         <el-button @click="blodfont">加粗</el-button>

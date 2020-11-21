@@ -412,6 +412,25 @@ util.editor_toggleFullscreen = function (editor) {
     $( '#editor ._wangEditor_btn_fullscreen').text('全屏')
   }
 }
+util.hasClass=function(elem,cls){
+  cls = cls || '';
+  if (cls.replace(/\s/g, '').length == 0) return false; //当cls没有参数时，返回false
+  return new RegExp(' ' + cls + ' ').test(' ' + elem.className + ' ');
+}
+util.addClass=function(elem,cls){
+  if (!util.hasClass(elem, cls)) {
+    elem.className = elem.className == '' ? cls : elem.className + ' ' + cls;
+  }
+}
 
+util.removeClass=function(elem,cls){
+  if (util.hasClass(elem, cls)) {
+    let newClass = ' ' + elem.className.replace(/[\t\r\n]/g, '') + ' ';
+    while (newClass.indexOf(' ' + cls + ' ') >= 0) {
+      newClass = newClass.replace(' ' + cls + ' ', ' ');
+    }
+    elem.className = newClass.replace(/^\s+|\s+$/g, '');
+  }
+}
 
 export default util;
